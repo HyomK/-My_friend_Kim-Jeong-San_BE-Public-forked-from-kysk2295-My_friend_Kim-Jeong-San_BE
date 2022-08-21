@@ -12,6 +12,7 @@ const UserRoom = require("./userRoom");
 const Item = require("./item");
 const Vote = require("./vote");
 const Poll = require("./poll");
+const Friend = require("./friend");
 
 const db = {};
 const sequelize = new Sequelize(
@@ -35,8 +36,8 @@ db.UserRoom = UserRoom;
 db.Item = Item;
 db.Vote = Vote;
 db.Poll = Poll;
+db.Friend = Friend;
 
-User.init(sequelize);
 Account.init(sequelize);
 Payment.init(sequelize);
 Room.init(sequelize);
@@ -47,8 +48,11 @@ UserRoom.init(sequelize);
 Item.init(sequelize);
 Vote.init(sequelize);
 Poll.init(sequelize);
+User.init(sequelize);
+Friend.init(sequelize);
 
 User.associate(db);
+Friend.associate(db);
 Account.associate(db);
 Room.associate(db);
 Receipt.associate(db);
