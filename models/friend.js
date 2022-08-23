@@ -12,7 +12,7 @@ module.exports = class Friend extends Sequelize.Model {
                     type: Sequelize.INTEGER,
                     allowNull: true,
                 },
-                profileImg: {
+                profilePhoto: {
                     type: Sequelize.STRING(200),
                     allowNull: true,
                 },

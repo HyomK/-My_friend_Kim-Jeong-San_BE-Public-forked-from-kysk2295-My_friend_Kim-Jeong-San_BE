@@ -18,7 +18,7 @@ module.exports = class Room extends Sequelize.Model {
                     allowNull: false,
                 },
                 startTime: {
-                    type: Sequelize.TIME,
+                    type: Sequelize.STRING(20),
                     allowNull: true,
                 },
                 group: {

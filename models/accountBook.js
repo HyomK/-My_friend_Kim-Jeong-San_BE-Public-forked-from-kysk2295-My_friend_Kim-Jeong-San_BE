@@ -8,7 +8,11 @@ module.exports = class AccountBook extends Sequelize.Model {
                     type: Sequelize.INTEGER,
                     allowNull: false,
                 },
-                accounts: {
+                memberAccounts: {
+                    type: Sequelize.JSON,
+                    allowNull: true,
+                },
+                nonMemberAccounts: {
                     type: Sequelize.JSON,
                     allowNull: true,
                 },

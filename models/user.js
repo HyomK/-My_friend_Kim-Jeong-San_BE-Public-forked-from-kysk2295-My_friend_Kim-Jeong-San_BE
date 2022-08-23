@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+const { sequelize, User, Friend } = require("./index");
 
 module.exports = class User extends Sequelize.Model {
     static init(sequelize) {

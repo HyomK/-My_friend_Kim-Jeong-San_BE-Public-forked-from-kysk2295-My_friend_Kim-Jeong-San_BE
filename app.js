@@ -6,6 +6,7 @@ const cors = require("cors");
 const userRouter = require("./routes/userRoute");
 const roomRouter = require("./routes/roomRoute");
 const paymentRouter = require("./routes/paymentRoute");
+const friendRouter = require("./routes/friendRoute");
 
 const bodyParser = require("body-parser");
 
@@ -26,18 +27,15 @@ sequelize
     });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.use("/user", userRouter);
-
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json()); // json 파싱
-
+app.use("/user", userRouter);
 app.use("/room", roomRouter);
 app.use("/payment", paymentRouter);
+app.use("/friend", friendRouter);
 
 app.use((req, res, next) => {
     const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
